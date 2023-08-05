@@ -13,5 +13,5 @@ To maintain privacy, all journal entries will be encrypted using either a passwo
 * Consumer app (codename "topaz journal") deployed on Optimism and Base.
 * Present problem: Medium => Sudden fees, Apple Journal App => Vendor Lock-in, Xanga => :skull:.
 * Present solution: Decentralized storage avoids all of these problems.
-* Louis discusses tech stack: `optimism-starter` codebase, Lighthouse storage for permanent storage contracts, smart contract mints NFT of lighthouse `cid`.
+* Louis discusses tech stack: `optimism-starter` codebase (which helped with setting up a dapp with wallet connection and generated hooks based on smart contract functionality, also deploy scripts), Lighthouse storage for permanent storage contracts, smart contract mints NFT of lighthouse `cid`.
 * Simon discusses UI elements and UX.
