@@ -1,7 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 
-import { Attestooooooor } from "./components";
+import { Journal } from "./components/Journal";
 
 export function App() {
   /**
@@ -12,7 +12,7 @@ export function App() {
 
   return (
     <>
-      <h1>OP Starter Project</h1>
+      <h1>Topaz Journal</h1>
 
       {/** @see https://www.rainbowkit.com/docs/connect-button */}
       <ConnectButton />
@@ -20,7 +20,7 @@ export function App() {
       {isConnected && (
         <>
           <hr />
-          <Attestooooooor />
+          <Journal />
           <hr />
         </>
       )}
