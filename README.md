@@ -15,3 +15,13 @@ To maintain privacy, all journal entries will be encrypted using either a passwo
 * Present solution: Decentralized storage avoids all of these problems.
 * Louis discusses tech stack: `optimism-starter` codebase (which helped with setting up a dapp with wallet connection and generated hooks based on smart contract functionality, also deploy scripts), Lighthouse storage for permanent storage contracts, smart contract mints NFT of lighthouse `cid`.
 * Simon discusses UI elements and UX.
+* V2 Roadmap: multiple journals
+  * Ability to bookmark a page/entry? (front end)
+  * Ability to highlight a part? (front end) 
+  * Ability to delete/burn? (blockchain)
+  * Ability to store media like voice, image, video (blockchain)
+  * Ability to write by hand
+  * Ability to have light and dark mode?
+  * Ability to have AI-generate prompts/models
+  * Ability to screen notes to check mood (most used words positive/negative)
+  * Ability for user to pick paper (=background)
