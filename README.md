@@ -1,12 +1,8 @@
-# Superhack Project: Decentralized Journal
+# Topaz
 
-## Main Idea
+Topaz is a journaling app that makes your thoughts last forever.  Built on Base and Optimism, Topaz saves your words onto the blockchain where only your wallet can access them.  Own each thought with Topaz.
 
-My superhack project creates a journaling application on Base.  The funky new features is that each journal entry is memorialized as an NFT saved to your connected wallet.
-
-The app will facilitate interactions with IPFS and FileCoin to persist the journal entry forever, avoiding any sort of vendor lock-in.  As long as there are funds in your wallet to pay persistence, journal entries will live on.
-
-To maintain privacy, all journal entries will be encrypted using either a password or your wallet's private key.
+More info in our [product spec](https://vintage-duckling-b9b.notion.site/Product-Spec-dd2c2641518a40e39a5a9f4614f7886d).
 
 ## Script elements
 
