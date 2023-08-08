@@ -2,10 +2,8 @@
 pragma solidity 0.8.18;
 
 /**
- * @title Journal - A decentralized journaling application on Base with NFT support.
- * @dev This contract allows users to create journal entries and save them as NFTs on Base.
- * The entries are stored on IPFS and incentivized with FileCoin for long-term persistence.
- * Journal entries can be encrypted for privacy using a password or wallet's private key.
+ * @title Journal - A decentralized journaling application on Base and Optimism.
+ * @dev This contract allows users to create journal entries with unique timestamps.
  */
 contract Journal {
     address owner;
@@ -25,6 +23,10 @@ contract Journal {
     // Mapping to store the array of entries for each user's address.
     mapping(address => Entry[]) entries;
 
+    /**
+     * @dev Modifier to ensure that a provided timestamp is unique among the sender's entries.
+     * @param _timestamp The timestamp to check for uniqueness.
+     */
     modifier uniqueTimestamp(string memory _timestamp) {
         uint256 len = getEntryLength();
         for (uint256 i = 0; i < len; i++) {
@@ -79,6 +81,10 @@ contract Journal {
         return entries[msg.sender].length;
     }
 
+    /**
+     * @dev Deletes a journal entry based on its timestamp.
+     * @param _timestamp The timestamp of the entry to be deleted.
+     */
     function deleteEntryByTimestamp(string memory _timestamp) public {
         uint256 len = getEntryLength();
 
@@ -93,16 +99,18 @@ contract Journal {
         revert("Entry with the given timestamp not found");
     }
 
+    /**
+     * @dev Deletes a journal entry at a specific index.
+     * @param index The index of the entry to be deleted.
+     */
     function deleteEntry(uint256 index) private {
         uint256 len = getEntryLength();
         require(index < len, "Invalid entry index");
 
-        // Shift the entries after the deleted entry to the left to remove the entry.
         for (uint256 i = index; i < len - 1; i++) {
             entries[msg.sender][i] = entries[msg.sender][i + 1];
         }
 
-        // Reduce the length of the entries array to remove the last entry (duplicate).
         entries[msg.sender].pop();
     }
 
