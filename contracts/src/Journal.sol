@@ -8,8 +8,6 @@ pragma solidity 0.8.18;
  * Journal entries can be encrypted for privacy using a password or wallet's private key.
  */
 contract Journal {
-    address owner;
-
     /**
      * @dev Struct representing a journal entry.
      * @param timestamp The timestamp of the entry.
