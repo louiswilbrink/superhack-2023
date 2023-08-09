@@ -6,7 +6,6 @@ pragma solidity 0.8.18;
  * @dev This contract allows users to create journal entries with unique timestamps.
  */
 contract Journal {
-    
     /**
      * @dev Struct representing a journal entry.
      * @param timestamp The timestamp of the entry.

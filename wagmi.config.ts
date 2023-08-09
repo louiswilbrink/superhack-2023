@@ -32,6 +32,9 @@ export default defineConfig({
           [chains.optimismGoerli.id]: ATTESTATION_STATION_ADDRESS,
           [chains.foundry.id]: ATTESTATION_STATION_ADDRESS,
         },
+        Counter: {
+          [chains.foundry.id]: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+        }
       },
     }),
     /**
