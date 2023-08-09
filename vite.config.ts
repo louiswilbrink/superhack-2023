@@ -41,6 +41,7 @@ export default defineConfig({
     alias: {
       process: "process/browser",
       util: "util",
+      public: "public",
     },
   },
   /**

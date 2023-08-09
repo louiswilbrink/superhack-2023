@@ -1,7 +1,10 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+
 import { useAccount } from "wagmi";
 
 import { Journal } from "./components/Journal";
+import { LoadingScreen } from "./components/LoadingScreen";
+import { WalletConnect } from "./components/WalletConnect";
 
 export function App() {
   /**
@@ -19,9 +22,7 @@ export function App() {
 
       {isConnected && (
         <>
-          <hr />
-          <Journal />
-          <hr />
+          <WalletConnect />
         </>
       )}
     </>
