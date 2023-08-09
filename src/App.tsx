@@ -14,17 +14,6 @@ export function App() {
   const { isConnected } = useAccount();
 
   return (
-    <>
-      <h1>Topaz Journal</h1>
-
-      {/** @see https://www.rainbowkit.com/docs/connect-button */}
-      <ConnectButton />
-
-      {isConnected && (
-        <>
-          <WalletConnect />
-        </>
-      )}
-    </>
+    <WalletConnect />
   );
 }

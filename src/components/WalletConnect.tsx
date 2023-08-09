@@ -1,15 +1,15 @@
-import { Button, ButtonGroup } from '@chakra-ui/react'
-
-import { ConnectWalletButton } from './ConnectWalletButton'
-import { ScanQrCodeButton } from './ScanQrCodeButton'
 import { Brand } from './Brand'
+import { Onboarding } from './Onboarding'
+import { OnboardingButtons } from './OnboardingButtons'
+import { TermsAndConditions } from './TermsAndConditions'
 
 export function WalletConnect() {
   return (
     <>
       <Brand />
-      <ConnectWalletButton />
-      <ScanQrCodeButton />
+      <Onboarding />
+      <OnboardingButtons />
+      <TermsAndConditions />
     </>
   );
 }
