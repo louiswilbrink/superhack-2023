@@ -27,10 +27,16 @@ import {
 export function Journal() {
   const testEntry = "I joined the ETHGlobal Superhack Hackathon today!";
 
+  const { data } = useJournalGetEntryLength({
+    address: '0xE691ED6875D0e921DB264bf9f53e0dbBBCE872e4', //contract address
+    // args: ['0xA0Cf798816D4b9b9866b5330EEa46a18382f251e'],
+  })
+
   const onValidate = () => {
-    //useJournalGetEntry();
-    //useCounterIncrement();
+    // useJournalGetEntry();
+    // useCounterIncrement();
     console.log("validated");
+
   };
 
   const result = useCounterNumber();
@@ -44,7 +50,7 @@ export function Journal() {
       </div>
       <div>
         <button>Cancel</button>
-        <button onClick={onValidate}>Validate</button>
+        <button onClick={() => console.log(data)}>Validate</button>
       </div>
     </>
   );

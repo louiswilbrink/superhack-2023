@@ -14,6 +14,21 @@ export function App() {
   const { isConnected } = useAccount();
 
   return (
-    <WalletConnect />
+    <>
+      {!isConnected && (
+        <>
+          <WalletConnect />
+        </>
+      )}
+      {isConnected && (
+        <>
+          <hr />
+          <Journal />
+          <hr />
+        </>
+      )}
+    </>
+
+    // <Journal />
   );
 }
