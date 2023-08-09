@@ -1,16 +1,20 @@
 import { Button } from '@chakra-ui/react'
 
+import 'public/futura_medium.woff2';
+
 export function ConnectWalletButton() {
   return (
     <Button 
     w="446px" 
     h="60px" 
+    fontFamily="'Futura', sans-serif"
+    fontWeight="100"
     fontSize="20px"
     borderRadius="100"
     color="black"
     letterSpacing="0.5px"
     background="brandGradient">
-      Connect Your Wallet
+      Connect your wallet
     </Button>
   );
 }

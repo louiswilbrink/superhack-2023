@@ -1,7 +1,9 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
+
+import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiConfig } from "wagmi";
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
