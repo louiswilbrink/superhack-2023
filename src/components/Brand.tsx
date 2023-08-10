@@ -1,4 +1,5 @@
 import { Image } from '@chakra-ui/react'
+
 import topaz from 'public/topaz.svg'
 
 export function Brand() {

@@ -5,6 +5,7 @@ import { useAccount } from "wagmi";
 import { Journal } from "./components/Journal";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { WalletConnect } from "./components/WalletConnect";
+import { StartYourJourney } from "./components/StartYourJourney";
 
 export function App() {
   /**
