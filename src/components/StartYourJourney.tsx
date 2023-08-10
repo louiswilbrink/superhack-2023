@@ -1,11 +1,11 @@
-import { Stack, Image, Heading, Text } from '@chakra-ui/react'
+import { Stack, Image, Heading, Text, Button } from '@chakra-ui/react'
 
 import { Header } from './Header'
 
 import binoculars from 'public/binoculars.svg'
 import editButton from 'public/edit_button.svg'
 
-export function StartYourJourney() {
+export function StartYourJourney({ onStartClicked }) {
   return(
     <>
       <Stack gap={0}>
@@ -34,15 +34,19 @@ export function StartYourJourney() {
           fontWeight="light">
           Every big journey starts with a small step. Create your first journal entry!
         </Text>
-        <Image 
-          width="60px"
-          height="60px"
+        <Button
           marginTop="44px"
           marginBottom="319px"
           marginLeft="auto"
           marginRight="auto"
-          src={editButton} alt="Pencil" 
-        />
+          background="none"
+          _hover={{ bg: "none" }}
+          onClick={() => onStartClicked(true)}>
+          <Image 
+            width="60px"
+            height="60px"
+            src={editButton} alt="Pencil" />
+        </Button>
       </Stack>
     </>
   );

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import { useAccount } from "wagmi";
@@ -14,6 +16,15 @@ export function App() {
    */
   const { isConnected } = useAccount();
 
+  /**
+   * Using simple state flags until we need to implement a full router.
+   */
+  const [isJourneyStarted, setIsJourneyStarted] = React.useState(false);
+
+  const onStartClicked = (newStatus) => {
+    setIsJourneyStarted(newStatus);
+  }
+
   return (
     <>
       {!isConnected && (
@@ -21,7 +32,14 @@ export function App() {
           <WalletConnect />
         </>
       )}
-      {isConnected && (
+      {isConnected && !isJourneyStarted && (
+        <>
+          <hr />
+          <StartYourJourney onStartClicked={(newStatus) => onStartClicked(newStatus)} />
+          <hr />
+        </>
+      )}
+      {isConnected && isJourneyStarted && (
         <>
           <hr />
           <Journal />
