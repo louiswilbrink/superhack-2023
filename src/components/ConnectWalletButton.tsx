@@ -1,5 +1,4 @@
 import { Button } from '@chakra-ui/react'
-// import { useConnect } from "wagmi";
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 
 import 'public/futura_medium.woff2';

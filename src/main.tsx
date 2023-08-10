@@ -22,6 +22,8 @@ const theme = extendTheme({
     brandGradient: "linear-gradient(to right, #F9DD7D, #F8F0A0)",
     black: "#303030",
     white: "#FFFFFF",
+    gray: "#898989",
+    lightGray: "#ededed",
   },
 })
 
