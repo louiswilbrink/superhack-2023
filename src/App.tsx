@@ -21,7 +21,7 @@ export function App() {
    */
   const [isJourneyStarted, setIsJourneyStarted] = React.useState(false);
 
-  const onStartClicked = (newStatus) => {
+  const onStartClicked = (newStatus: boolean | ((prevState: boolean) => boolean)) => {
     setIsJourneyStarted(newStatus);
   }
 
@@ -35,7 +35,7 @@ export function App() {
       {isConnected && !isJourneyStarted && (
         <>
           <hr />
-          <StartYourJourney onStartClicked={(newStatus) => onStartClicked(newStatus)} />
+          <StartYourJourney onStartClicked={(newStatus: boolean | ((prevState: boolean) => boolean)) => onStartClicked(newStatus)} />
           <hr />
         </>
       )}

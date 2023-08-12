@@ -3,7 +3,11 @@ import { useAccount, useNetwork, useWaitForTransaction } from "wagmi";
 
 import { Header } from './Header'
 import { EntryDate } from './EntryDate';
-import { JournalButtons } from './JournalButtons';
+// import { JournalButtons } from './JournalButtons';
+import { journalABI } from "../generated";
+
+
+import { useContractRead } from 'wagmi'
 
 import {
   parseString,
@@ -37,6 +41,15 @@ export function Journal() {
     // args: ['0xA0Cf798816D4b9b9866b5330EEa46a18382f251e'],
   })
 
+  const contractRead = useContractRead({
+    address: '0xE691ED6875D0e921DB264bf9f53e0dbBBCE872e4',
+    abi: journalABI,
+    functionName: 'getEntryLength',
+    onSettled(data, error) {
+      console.log('Settled', { data, error })
+    },
+  })
+
   const onValidate = () => {
     // useJournalGetEntry();
     // useCounterIncrement();
@@ -56,23 +69,23 @@ export function Journal() {
         marginRight="40px"
         gap="19px">
         <EntryDate />
-        <VStack 
+        <VStack
           gap="34px"
           width="100%">
-          <Textarea 
+          <Textarea
             height="397px"
             border="none"
             boxShadow="lg"
             resize="none"
             placeholder="What happened today?" />
           <Flex
-            
+
             width="100%"
             gap="16px"
             alignItems="center">
-            <Button 
+            <Button
               flex="1"
-              h="60px" 
+              h="60px"
               fontFamily="'Futura', sans-serif"
               fontWeight="100"
               fontSize="20px"
@@ -94,7 +107,7 @@ export function Journal() {
               color="black"
               letterSpacing="0.5px"
               background="brandGradient"
-              onClick={() => console.log('Validating')}>
+              onClick={() => contractRead}>
               Save forever
             </Button>
           </Flex>
